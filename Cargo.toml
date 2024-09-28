@@ -1,0 +1,11 @@
+[package]
+name = "calculator-rs"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "A really simple calculator that can parse and compute mathematical expressions."
+authors = ["Philippe Anel <philippe@dremml.com>"]
+
+[dependencies]
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
