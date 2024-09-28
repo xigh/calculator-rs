@@ -68,8 +68,6 @@ BinaryOp(Number(1.0), '+', BinaryOp(Number(2.0), '*', Function("sin", Number(1.9
 1 + 2 * sin(1.9) -> 2.892600175374829
 ```
 
-![Screenshot](screenshot.png)
-
 ## License
 
 This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more details.
