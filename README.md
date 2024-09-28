@@ -30,16 +30,42 @@ And supports unary operators `+` and `-`.
 
 This has been written to be a simple educational tool to understand how to parse mathematical expressions in Rust without any external dependencies.
 
+## Examples
+
+```bash
+cargo run -- "1 + 2 * sin(1.9)"
+```
+
+```text
+1 + 2 * sin(1.9) -> 2.892600175374829
+```
+
 ## Usage
 
-```
+```bash
 cargo run -- --help
 ```
 
-## Examples
+You can also see the tokens in the expression with the `--show-tokens` flag:
 
+```bash
+cargo run -- "1 + 2 * sin(1.9)" --show-tokens
 ```
-cargo run -- "1 + 2 * sin(1.9)"
+
+```text
+[Number(1.0), Operator('+'), Number(2.0), Operator('*'), Function("sin"), LeftParen, Number(1.9), RightParen]
+1 + 2 * sin(1.9) -> 2.892600175374829
+```
+
+And the AST with the `--show-ast` flag:
+
+```bash
+cargo run -- "1 + 2 * sin(1.9)" --show-ast
+```
+
+```text
+BinaryOp(Number(1.0), '+', BinaryOp(Number(2.0), '*', Function("sin", Number(1.9))))
+1 + 2 * sin(1.9) -> 2.892600175374829
 ```
 
 ![Screenshot](screenshot.png)
